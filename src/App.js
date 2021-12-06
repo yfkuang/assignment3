@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useParams
+} from "react-router-dom"
+import { Header } from './components/header'
+import { Footer } from './components/footer'
+import { Content } from './components/content';
+import { Index } from './components/pages/landing'
+import { Product } from './components/pages/product'
+import { Products } from './products.js'
 
 function App() {
+  let { id } = useParams();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <Router>
+        <Header />
+        <Content>
+          <Routes>
+            {/* Index */}
+            <Route exact path="/" element={<Index products={ Products }/>} />
+            {/* Product */}
+            <Route path="/product/:id" element={<Product products={ Products }/>} />
+          </Routes>
+        </Content>
+        <Footer />
+      </Router>
+      
     </div>
   );
 }
