@@ -19,7 +19,7 @@ function App() {
           {/* Index */}
           <Route exact path="/" element={<Index/>} />
           {/* Fighter */}
-          <Route path="/fighter/:id" element={<Fighters/>} />
+          <Route path="/fighter/:id" element={<Fighters />} />
         </Routes>
       </Router>
       
