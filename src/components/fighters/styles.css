@@ -1,0 +1,11 @@
+.fighter-container {
+    padding: 50px;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.fighter-container img {
+    float: left;
+}

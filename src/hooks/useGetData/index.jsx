@@ -26,7 +26,7 @@ export const useGetData = (id) => {
         if(id){
             const docRef = doc(db, "fighters", id)
             const docSnap = await getDoc(docRef)
-            setDocuments(docSnap)
+            setDocuments(docSnap.data())
         } else {
             let docs = [];
             const querySnapshot = await getDocs(collection(db, "fighters"));
