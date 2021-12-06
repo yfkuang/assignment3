@@ -1,4 +1,7 @@
-export const Nav = () => {
+import "./styles.css"
+
+export const Fighters = () => {
+
     return (
         <div>
             

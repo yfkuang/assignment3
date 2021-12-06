@@ -3,14 +3,12 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useParams
 } from "react-router-dom"
 import { Header } from './components/header'
 import { Index } from './components/pages/landing'
-
+import { Fighters } from './components/fighters'
 
 function App() {
-  let { id } = useParams();
 
   return (
     <div className="App">
@@ -20,8 +18,8 @@ function App() {
         <Routes>
           {/* Index */}
           <Route exact path="/" element={<Index/>} />
-          {/* Product */}
-          <Route path="/product/:id" element={<Product products={ Products }/>} />
+          {/* Fighter */}
+          <Route path="/fighter/:id" element={<Fighters/>} />
         </Routes>
       </Router>
       
